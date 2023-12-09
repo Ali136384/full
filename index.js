@@ -5,7 +5,6 @@ import PostsDB from "./models/PostsSchema.js";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import expressFileUpload from "express-fileupload";
-// import cookieRoutes from "./routes/users.js";
 import cors from "cors";
 import mongoose from "mongoose";
 
@@ -15,14 +14,8 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(cors());
 app.use("/api/auth", authRoutes);
-app.use("/api", postRoutes); 
+app.use("/api", postRoutes);
 app.use(expressFileUpload());
-// app.use("/api", cookieRoutes);
-
-// app.get("/test", (req, res) => {
-//   res.setHeader("set-cookie", "user=rino");
-//   res.send("Hello Ali");
-// });
 
 app.get("/api/data", async (req, res) => {
   try {

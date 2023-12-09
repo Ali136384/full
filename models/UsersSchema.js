@@ -11,6 +11,9 @@ const UserSchema = mongoose.Schema({
   password: {
     type: String,
   },
+  favorites: {
+    type: Array,
+  },
 });
 
 const Mans = mongoose.model("Loginers", UserSchema);
